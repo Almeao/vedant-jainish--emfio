@@ -1,0 +1,307 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #EBEBEB;
+    /* Light gray background from image */
+    color: #1A1A1A;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Lenis Recommended CSS */
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+    pointer-events: none;
+}
+
+/* Utilities */
+.container-fluid {
+    width: 100%;
+    padding: 0 60px;
+    /* Generous padding like in image */
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Hero Section */
+.hero-section {
+    padding-top: 120px;
+    /* Push down content */
+    padding-bottom: 60px;
+}
+
+.hero-title {
+    font-size: 180px;
+    /* Massive size matching reference */
+    font-weight: 400;
+    /* Regular/Light weight */
+    letter-spacing: -6px;
+    /* Tight tracking */
+    line-height: 1;
+    color: #0F0F0F;
+    margin-bottom: 60px;
+}
+
+.hero-divider {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    width: 94%;
+    /* Slight inset like commonly seen in designs or 100% of container */
+    margin: 0 auto;
+    /* Actually reference has full width line across container? */
+    /* Let's match container width */
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+/* Latest Post Section */
+.latest-post-section {
+    padding: 80px 0;
+    background-color: #EBEBEB;
+}
+
+.section-divider {
+    border: none;
+    /* border-top: 1px solid rgba(0, 0, 0, 0.1); */
+    width: 100%;
+}
+
+.latest-post-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    padding: 80px 0px;
+    align-items: stretch;
+}
+
+.post-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.label-wrapper {
+    margin-bottom: 40px;
+}
+
+.post-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dot {
+    font-size: 8px;
+}
+
+.post-title {
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+    max-width: 95%;
+}
+
+.post-metadata {
+    font-family: monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #666;
+    margin-bottom: auto;
+}
+
+.post-bottom {
+    margin-top: 60px;
+}
+
+.post-description {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #333;
+    margin-bottom: 30px;
+    max-width: 400px;
+}
+
+.btn-read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 24px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+}
+
+.btn-read-more:hover {
+    transform: scale(1.05);
+}
+
+.btn-read-more i {
+    font-size: 11px;
+}
+
+.post-image {
+    width: 100%;
+    overflow: hidden;
+}
+
+.post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 1400px) {
+    .post-title {
+        font-size: 52px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .hero-title {
+        font-size: 120px;
+        letter-spacing: -4px;
+    }
+
+    .container-fluid {
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .latest-post-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .post-title {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 64px;
+        letter-spacing: -2px;
+    }
+
+    .container-fluid {
+        padding: 0 20px;
+    }
+
+    .latest-post-grid {
+        padding: 40px 20px;
+    }
+
+    .post-title {
+        font-size: 36px;
+    }
+
+    .floating-action-bar {
+        font-size: 9px;
+    }
+}
+
+/* Floating Action Bar */
+.floating-action-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    display: flex;
+    font-family: 'Inter', monospace;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 1px;
+    transform: translateY(100%);
+    transition: transform 0.4s ease-in-out;
+    border-top: 1px solid #ccc;
+}
+
+.floating-action-bar.visible {
+    transform: translateY(0);
+}
+
+.fab-left {
+    flex: 1;
+    background-color: #EBEBEB;
+    color: #333;
+    padding: 14px 20px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.fab-right {
+    background-color: #000;
+    color: #fff;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid #ccc;
+}
+
+.fab-left a,
+.fab-right a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+}
+
+.fab-left a i,
+.fab-right a i {
+    font-size: 10px;
+    transform: rotate(-45deg);
+    transition: transform 0.3s;
+}
+
+.fab-left a:hover i,
+.fab-right a:hover i {
+    transform: rotate(0deg);
+}

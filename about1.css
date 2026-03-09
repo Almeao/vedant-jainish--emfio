@@ -1,0 +1,464 @@
+/* About Page Specific Styles */
+body {
+    background-color: #F0F0F0;
+    /* Slight gray background as seen in ref */
+}
+
+.about-main {
+    padding-top: 120px;
+    /* Account for navbar */
+    overflow: hidden;
+}
+
+/* Hero */
+.about-hero {
+    padding: 100px 0 60px;
+}
+
+.hero-title {
+    font-size: 140px;
+    /* Massive headline */
+    font-weight: 400;
+    /* Regular weight */
+    letter-spacing: -4px;
+    line-height: 1;
+    color: #1A1A1A;
+    margin-left: -5px;
+    /* Visual optical alignment */
+}
+
+/* Intro Text */
+.about-intro {
+    padding: 60px 0 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.intro-text {
+    font-size: 56px;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    color: #1A1A1A;
+    max-width: 900px;
+}
+
+/* Gallery Grid */
+.about-gallery {
+    padding: 80px 0;
+    padding-right: 50px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 0.6fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.gallery-item {
+    position: relative;
+    width: 100%;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 550px;
+    display: block;
+    object-fit: cover;
+    margin-bottom: 40px;
+}
+
+.gallery-item.large img {
+    aspect-ratio: 4/5;
+    /* Tall portrait ratio */
+}
+
+.gallery-item.small img {
+    aspect-ratio: 1/1;
+    /* Square ratio */
+}
+
+.gallery-item.large {
+    width: 100%;
+    margin-top: 0;
+}
+
+.gallery-item.small {
+    width: 100%;
+}
+
+/* Mission Section (Nested) */
+.about-mission {
+    padding: 0;
+    /* Remove padding when nested */
+    margin-top: 40px;
+}
+
+.mission-wrapper {
+    display: flex;
+    flex-direction: column;
+    /* Stack label and content vertically */
+    gap: 20px;
+}
+
+.mission-label {
+    width: 100%;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.mission-content {
+    width: 100%;
+}
+
+.mission-statement {
+    font-size: 28px;
+    /* Smaller than before, matching ref */
+    font-weight: 400;
+    line-height: 1.3;
+    letter-spacing: -0.5px;
+    margin-bottom: 30px;
+    color: #1A1A1A;
+}
+
+.mission-statement .num {
+    font-size: 14px;
+    vertical-align: middle;
+    font-family: 'Inter', sans-serif;
+    /* Monospace or similar if needed */
+    color: #999;
+    margin-right: 4px;
+    background: #EAEAEA;
+    padding: 2px 4px;
+    border-radius: 4px;
+    /* Optional styling for the [1] */
+}
+
+.mission-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+    max-width: 100%;
+}
+
+/* Animation Init States */
+
+.reveal-text {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.reveal-image {
+    opacity: 0;
+    clip-path: inset(0 0 100% 0);
+    /* Wipe reveal */
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 100px;
+    }
+
+    .intro-text {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 64px;
+    }
+
+    .gallery-grid {
+        flex-direction: column;
+    }
+
+    .gallery-item.large,
+    .gallery-item.small {
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .mission-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .mission-label {
+        width: 100%;
+    }
+
+    .mission-content {
+        width: 100%;
+    }
+
+    .mission-statement {
+        font-size: 32px;
+    }
+}
+
+/* Present Day Section */
+.about-present {
+    padding: 80px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.present-wrapper {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.present-label {
+    /* width: 20%; */
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #1A1A1A;
+    padding-top: 10px;
+    white-space: nowrap;
+}
+
+.present-content {
+    width: 90%;
+}
+
+.present-text {
+    font-size: 44px;
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -1px;
+    color: #1A1A1A;
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+    .present-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .present-label,
+    .present-content {
+        width: 100%;
+    }
+
+    .present-text {
+        font-size: 32px;
+    }
+}
+
+/* Full Screen Image Section */
+.about-fullscreen-image {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.about-fullscreen-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Quote Section */
+.about-quote {
+    background-color: #ae441d;
+    color: #eddbb5;
+    padding: 140px 0;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.quote-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-quote blockquote {
+    font-size: 48px;
+    /* Increased size */
+    line-height: 1.3;
+    font-weight: 300;
+    margin-bottom: 80px;
+    letter-spacing: -1px;
+}
+
+.quote-author {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.sig-cursed {
+    font-family: 'Brush Script MT', 'Comic Sans MS', cursive;
+    /* Fallback cursive */
+    font-size: 56px;
+    font-weight: 400;
+    color: #1a1a1a;
+    /* Dark signature color like ink/black */
+    transform: rotate(-5deg);
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Making signature dark to stand out or keeping white if preferred. Ref looks like dark ink possibly or just matching text? 
+   Actually ref image signature is black/dark gray. 
+*/
+
+.author-details {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.quote-icon {
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.author-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.author-name {
+    font-size: 15px;
+    font-weight: 600;
+    /* Regular weight */
+    color: #eddbb5;
+    letter-spacing: 0.5px;
+}
+
+.author-role {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+    margin-left: 10px;
+    /* Spacing between name and role */
+}
+
+/* Sustainability Section */
+.about-sustainability {
+    background-color: #F0F0F0;
+    /* Match body bg or slightly different */
+    padding: 0;
+    overflow: hidden;
+}
+
+.sustain-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+    /* Full viewport height split */
+    align-items: center;
+}
+
+.sustain-content {
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.sustain-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #1A1A1A;
+    margin-bottom: 30px;
+}
+
+.sustain-heading {
+    font-family: 'Inter', sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -1px;
+    color: #1A1A1A;
+    margin-bottom: 50px;
+    max-width: 600px;
+}
+
+.btn-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #000;
+    /* Black button */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 99px;
+    font-size: 13px;
+    font-weight: 500;
+    width: fit-content;
+    transition: background-color 0.3s;
+}
+
+.btn-pill:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+/* .sustain-image {
+    height: 100%;
+    width: 100%;
+} */
+
+.sustain-image img {
+    width: 95%;
+    height: 95%;
+    object-fit: cover;
+    display: block;
+    padding: 20px;
+}
+
+@media (max-width: 1024px) {
+    .sustain-grid {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .sustain-image {
+        height: 500px;
+        order: -1;
+        /* Image on top on mobile? or bottom? Ref usually keeps image visible. Let's keep consistent order or swap. */
+    }
+
+    .sustain-content {
+        padding: 60px 40px;
+        height: auto;
+    }
+
+    .sustain-heading {
+        font-size: 32px;
+    }
+}
+
+/* Blur Effect for Mega Menus */
+body:has(.nav-item:hover .mega-menu) .main-content {
+    filter: blur(10px);
+}
