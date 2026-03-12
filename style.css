@@ -10,6 +10,7 @@ body {
     background-color: #F5F5F5;
     /* Light grey bg */
     color: #1A1A1A;
+    /* overflow-x: hidden; */
 }
 
 a {
@@ -24,7 +25,7 @@ ul {
 /* Constants */
 :root {
     --bg-color: #EBEBEB;
-    --nav-height: 80px;
+    --nav-height: 10vh;
     --text-color: #333;
     --accent-color: #000;
     --border-color: #DDD;
