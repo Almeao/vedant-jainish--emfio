@@ -158,7 +158,7 @@ main {
 
 .part2 {
     width: 99.8vw;
-    height: auto;
+    height: 10%;
     /* background-color: #b300ff; */
     margin-top: 0.1%;
     display: none;
@@ -433,6 +433,14 @@ main {
     font-weight: 500;
 }
 
+.part5_inner {
+    width: 55%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    /* background-color: yellow; */
+}
+
 .part5_p {
     width: 15%;
     display: flex;
@@ -450,6 +458,9 @@ main {
     align-items: start;
     /* background-color: yellow; */
 }
+
+
+
 
 .part5_p:nth-child(2) {
     color: #00000055;
@@ -1673,28 +1684,586 @@ footer {
 
     .part3 {
 
-        height: 70vh;
+        height: auto;
         width: 97vw;
         /* background-color: whitesmoke; */
     }
+
     .part3_top {
+        height: 90vh;
+        width: 97vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        /* background-color: #bababa; */
+    }
+
+
+
+    .part3_right_detail {
+        width: 100%;
+        height: fit-content;
+        /* background-color: yellowgreen; */
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+    }
+
+
+
+
+  
+
+    .char-mask {
+        height: 4.5vw;
+        overflow: hidden;
+        position: relative;
+        display: inline-block;
+    }
+
+
+
+
+
+
+
+
+
+
+
+    .part3_right_detail_top {
+        width: 100%;
+        height: 15%;
+        /* background-color: wheat; */
+        overflow: hidden;
+        display: flex;
+        font-size: 4vw;
+        font-weight: 600;
+    }
+
+
+.part3_right_detail_bottam {
+    /* background-color: rgb(126, 89, 21); */
+    width: 100%;
+    height: auto;
+    margin-top: 5%;
+    font-size: 4.5vw;
+
+    line-height: 1;
+    font-weight: 500;
+    /* margin-top: -10%; */
+    color: #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .part3_img_animation {
+        flex: 2;
+        order: 2;
+        width: 100%;
+        height: 50%;
+        display: flex;
+        align-items: end;
+    }
+
+    .part3_img_animation_inner {
+
+        /* position: sticky; */
+        top: 0;
+        width: 100%;
+        height: 90%;
+        will-change: transform;
+    }
+
+
+
+
+.part3_bottam_detail {
+    width: 97vw;
     height: 40vh;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    margin-top: 5%;
+    /* background-color: wheat; */
+
+
+}
+
+.part3_bottam_detail p {
+    font-family: 'font3';
+    font-size: 9vw;
+    font-weight: 700;
+    color: #000;
+    line-height: 1.1;
+    overflow: hidden;
+
+
+}
+
+.part3_bottam_detail p:nth-child(1) {
+    margin-left: 0%;
+    text-align: left;
+}
+
+
+
+
+.part4 {
+    height: 20vh;
+    width: 97vw;
+    margin-top: 5%;
+    /* background-color: turquoise; */
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    align-items: start;
+
+}
+
+.part4_left {
+    width: 100%;
+    height: auto;
+    font-size: 3.7vw;
+    font-weight: 500;
+    line-height: 1.2;
+    display: inline-block;
+    vertical-align: top;
+    /* Ensures no line breaks: any p tags inside should be forced to display inline or inline-block */
+}
+
+.part4_left p {
+    display: inline-block;
+
+    vertical-align: top;
+}
+
+
+.part4_right {
+    width: 100%;
+    height: auto;
+    /* background-color: yellow; */
+    font-size: 3.7vw;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-top: 5%;
+
+}
+
+.part5 {
+    height: auto;
     width: 97vw;
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
-    background-color: #bababa;
-    }
+    font-size: 3.8vw;
+    font-weight: 500;
+}
 
-    .part3_right_detail
-    {
-          flex: 2;
-    }
+.part5_p {
+    width: 15%;
+    display: flex;
 
-    .part3_img_animation
-    {
-        flex: 1;
-    }
+    justify-content: start;
+    flex: 2;
+    order: 2;
+    /* background-color: yellow; */
+}
+
+.part5_p:nth-child(2) {
+    width: 5vw; /* Decreased width, ensure it's smaller than before */
+    min-width: 0;
+    max-width: 7vw;
+    flex-basis: 5vw; /* Ensure flex system respects this width */
+    flex: 1 0 5vw;
+    order: 1;
+    /* background-color: rgb(151, 151, 44); */
+}
+
+
+.part5 p:nth-child(3) {
+ 
+     flex: 3;
+    order: 3;
+    width: 10%;
+}
+
+
+
+.part6 {
+    height: auto;
+    width: 99.5vw;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: #000;
+    /* background-color: violet; */
+}
+
+.part6_empty_1 {
+    height: 1.5px;
+    width: 10px;
+    background-color: #000;
+    border: none;
+}
+
+.part6_empty_2 {
+    height: 1.5px;
+    width: 10px;
+    background-color: #000;
+    /* border: none; */
+}
+
+.part6_data {
+    display: flex;
+    justify-content: center;
+    width: 95%;
+    height: auto;
+    font-size: 6vw;
+    font-weight: 600;
+    /* background-color: yellow; */
+}
+
+.part6_data_center {
+    width: auto;
+
+    height: auto;
+    /* background-color: yellowgreen; */
+}
+
+.part6_data_counce_open {
+    width: auto;
+    height: auto;
+    /* padding-right: 0%; */
+    /* background-color: yellowgreen; */
+}
+
+.part6_data_counce_close {
+    width: auto;
+    height: auto;
+    /* padding-left: 0%; */
+    /* background-color: yellowgreen; */
+}
+
+
+
+
+.part7 {
+    height: 40vh;
+    width: 80vw;
+    padding: 0%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: violet; */
+    overflow: hidden;
+}
+
+.part7_img {
+    height: 45vh;
+    width: 100%;
+
+}
+
+.part7_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.part7_detail {
+    color: #000;
+    height: 3vh;
+    width: 55vw;
+    display: flex;
+    justify-content: space-between;
+    transform-origin: top bottam;
+    /* background-color: yellow; */
+    overflow: hidden;
+
+}
+
+.part7_detail p {
+    margin-top: 0%;
+}
+
+
+
+
+
+
+.part8 {
+    height: auto;
+    width: 99.5vw;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: #000;
+    /* background-color: violet; */
+}
+
+.part8_empty_1 {
+    height: 1.5px;
+    width: 10px;
+    background-color: #000;
+    border: none;
+}
+
+.part8_empty_2 {
+    height: 1.5px;
+    width: 10px;
+    background-color: #000;
+    /* border: none; */
+}
+
+.part8_data {
+    display: flex;
+    justify-content: center;
+    width: 95%;
+    height: auto;
+    font-size: 6vw;
+    font-weight: 600;
+    /* background-color: yellow; */
+}
+
+.part8_data_center {
+    width: auto;
+
+    height: auto;
+    /* background-color: yellowgreen; */
+}
+
+.part8_data_counce_open {
+    width: auto;
+    height: auto;
+    /* padding-right: 0%; */
+    /* background-color: yellowgreen; */
+}
+
+.part8_data_counce_close {
+    width: auto;
+    height: auto;
+    /* padding-left: 0%; */
+    /* background-color: yellowgreen; */
+}
+
+
+
+
+.part9 {
+    height: 40vh;
+    width: 80vw;
+    padding: 0%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: violet; */
+    overflow: hidden;
+}
+
+.part9_img {
+    height: 45vh;
+    width: 100%;
+
+}
+
+.part9_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.part9_detail {
+    color: #000;
+    height: 3vh;
+    width: 55vw;
+    display: flex;
+    justify-content: space-between;
+    transform-origin: top bottam;
+    /* background-color: yellow; */
+    overflow: hidden;
+
+}
+
+.part9_detail p {
+    margin-top: 0%;
+}
+
+
+
+
+.part10 {
+    height: auto;
+    width: 99.5vw;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: #000;
+    /* background-color: violet; */
+}
+
+.part10_empty_1 {
+    height: 1.5px;
+    width: 10px;
+    background-color: #000;
+    border: none;
+}
+
+.part10_empty_2 {
+    height: 1.5px;
+    width: 10px;
+    background-color: #000;
+    /* border: none; */
+}
+
+.part10_data {
+    display: flex;
+    justify-content: center;
+    width: 95%;
+    height: auto;
+    font-size: 6vw;
+    font-weight: 600;
+    /* background-color: yellow; */
+}
+
+.part10_data_center {
+    width: auto;
+
+    height: auto;
+    /* background-color: yellowgreen; */
+}
+
+.part10_data_counce_open {
+    width: auto;
+    height: auto;
+    /* padding-right: 0%; */
+    /* background-color: yellowgreen; */
+}
+
+.part10_data_counce_close {
+    width: auto;
+    height: auto;
+    /* padding-left: 0%; */
+    /* background-color: yellowgreen; */
+}
+
+
+
+
+.part11 {
+    height: 40vh;
+    width: 80vw;
+    padding: 0%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: violet; */
+    overflow: hidden;
+}
+
+.part11_img {
+    height: 45vh;
+    width: 100%;
+
+}
+
+.part11_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.part11_detail {
+    color: #000;
+    height: 3vh;
+    width: 55vw;
+    display: flex;
+    justify-content: space-between;
+    transform-origin: top bottam;
+    /* background-color: yellow; */
+    overflow: hidden;
+
+}
+
+.part11_detail p {
+    margin-top: 0%;
+}
+
+
+
+
+
+.part12 {
+    height: 150vh;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+    /* background-color: #000; */
+    /* align-items: center; */
+    /* background-color: #1b1c32; */
+}
+
+.part12_sticky {
+    position: sticky;
+    height: max-content;
+    width: 50vw;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background: #4978a66b; */
+    font-size: 5vw;
+    scale: 0.5;
+    color: #000;
+    z-index: 1000;
+    /* Ensures sticky has a background in case content scrolls underneath */
+}
+
+
+
+.part12_background_image_grid_1 {
+    display: grid;
+    grid-template-columns: repeat(50, 1fr);
+    grid-template-rows: repeat(80, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    height: 100vh;
+    width: 100vw;
+    /* background-color: #15425b44; */
+    position: absolute;
+    margin-top: 10%;
+}
+
+
+
+
+
+
+
+
 
 
 

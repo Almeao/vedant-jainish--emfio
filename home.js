@@ -613,6 +613,9 @@ gsap.to("[data-speed]", {
   // Updated: GSAP ScrollTrigger to pin the parent and move the inner image smoothly based on scroll
 
   document.addEventListener("DOMContentLoaded", function () {
+    // Do not add animation in <=480px viewport (media query behavior)
+    if (window.innerWidth <= 480) return;
+
     if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
     if (gsap && gsap.registerPlugin) {
       gsap.registerPlugin(ScrollTrigger);
