@@ -1927,7 +1927,7 @@ main {
 
 
 .part12 {
-    height: 300vh;
+    height: 160vh;
     width: 100vw;
     position: relative;
     display: flex;
@@ -1964,13 +1964,13 @@ main {
     grid-row-gap: 0px;
     height: 100vh;
     width: 100vw;
-    /* background-color: #15425b44; */
+    /* background-color: #2878a344; */
     position: absolute;
     margin-top: 0%;
 }
 
 .part12_wrapper {
-    height: 110vh;
+    height: 130vh;
     width: 100vw;
     background-color: #00000081;
     /* opacity: 0; */
@@ -1980,13 +1980,112 @@ main {
     align-items: center;
 }
 
+.part12_background_image_main_div {
+    /* Ensure parent has position: relative (HTML context required for absolute to work as expected) */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 110vh;
+    /* Fill viewport height (change from 'auto' to see effect) */
+    background-image: url('Stanhope-3-2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 99999;
+    margin-top: -5%;
+    /* transform: translateX("-20%"); */
+    /* clip-path: polygon(39.65% 21.13%, 60.03% 21.13%, 60.03% 38.84%, 39.65% 38.84%); */
+
+}
 
 
+.part13 {
+    height: 100vh;
+    width: 97vw;
+    display: flex;
+    /* justify-content: space-between; */
+    flex-direction: column;
+    /* background-color: #284563; */
+    padding-bottom: 5%;
+}
 
 
+.part13_left {
+    width: 100%;
+    height: 60%;
+    /* background-color: #000; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.part13_left_upper {
+    height: 70%;
+    width: 100%;
+    order: 1;
+    /* background-color: yellow; */
+    font-size: 6vw;
+    color: #909091;
+
+}
 
 
+.part13_left_upper p {
+    display: inline;
+    font-weight: 600;
+    line-height: 0.8;
+    color: #909091;
+    transition: color 0.3s ease;
+}
 
+.part13_left_lower {
+    height: 20%;
+    width: 100%;
+    /* background-color: #a3cae1; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: start;
+}
+
+.part13_left_lower_1 {
+    width: auto;
+    height: 100%;
+    /* order: 2; */
+    /* background-color: violet; */
+}
+.part13_left_lower_2 {
+    width: auto;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+}
+
+.part13_left_lower_2_inner {
+    width: auto;
+    /* background-color: tomato; */
+    height: 100%;
+    display: flex;
+    align-items: start;
+    font-size: 3vw;
+    font-weight: 500;
+    line-height: 1;
+}
+
+
+.part13_right {
+    width: 100%;
+    height: 40%;
+    /* background-color: #000; */
+
+}
+
+.part13_right img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
 
 
 

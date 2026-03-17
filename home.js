@@ -1116,22 +1116,22 @@ gsap.fromTo(
 
 
 // Smooth and perfect fade-in for the grid images background with easing
-gsap.fromTo(
-  ".part12_background_image_grid_1",
-  { opacity: 0 },
-  {
-    opacity: 1,
-    duration: 5,
-    ease: "power1.inOut",
-    scrollTrigger: {
-      trigger: ".part12",
-      start: "top 70%",
-      end: "top top",
-      scrub: true,
-      // markers: true,
-    }
-  }
-);
+// gsap.fromTo(
+//   ".part12_background_image_grid_1",
+//   { opacity: 0 },
+//   {
+//     opacity: 1,
+//     duration: 5,
+//     ease: "power1.inOut",
+//     scrollTrigger: {
+//       trigger: ".part12",
+//       start: "top 70%",
+//       end: "top top",
+//       scrub: true,
+//       // markers: true,
+//     }
+//   }
+// );
 
 
 
@@ -1238,7 +1238,7 @@ setupFastDivScrollAndMouseAnimation(".part12_grid_image_19", 0.6, 15, 15);
 
 
 // Use GSAP and ScrollTrigger for smooth, delayed clip-path + opacity animation
-(function() {
+function part12_div_main_animation_ganral() {
   const bgDiv = document.querySelector(".part12_background_image_main_div");
   const sticky = document.querySelector(".part12_sticky");
   if (!bgDiv || !sticky || !window.gsap || !window.ScrollTrigger) return;
@@ -1360,12 +1360,141 @@ setupFastDivScrollAndMouseAnimation(".part12_grid_image_19", 0.6, 15, 15);
     ScrollTrigger.getAll().forEach(t => t.kill());
     setupAnimations();
   });
-})();
+}
+function part12_div_main_animation_480px() {
+  const bgDiv = document.querySelector(".part12_background_image_main_div");
+  const sticky = document.querySelector(".part12_sticky");
+  if (!bgDiv || !sticky || !window.gsap || !window.ScrollTrigger) return;
+
+  // Initial styles
+  bgDiv.style.clipPath = "polygon(39.25% 25.75%, 58% 25.75%, 58% 39.61%, 40% 39.61%)";
+  sticky.style.opacity = "1";
+
+  // GSAP plugin registration (defensive for legacy)
+  if (gsap && gsap.registerPlugin) {
+    gsap.registerPlugin(ScrollTrigger);
+  }
+
+  function setupAnimations() {
+    // Animate sticky fade out when 40% of bgDiv enters from bottom
+    gsap.to(sticky, {
+      opacity: 0,
+      
+      ease: "power2.inOut",
+      duration: 1,
+      scrollTrigger: {
+        trigger: bgDiv,
+        start: "top+=60% bottom",
+        end: "top+=150px bottom",
+        scrub: 4,
+        // markers: true,
+      }
+    });
+
+    // Clip-path animation: bgDiv should behave sticky and cover scroll until finished, then scroll out
+    const origPoly = [
+      [39.25, 25.75],
+      [58, 25.75],
+      [58, 39.61],
+      [40, 39.61]
+    ] 
+    const endPoly = [
+      [0, 0],
+      [100, 0],
+      [100, 100],
+      [0, 100]
+    ];
+
+    // We'll use pinning to keep the div sticky while clip-path animates
+    // Animate background clip-path as well as both left and right grid images' translateX with scroll
+    const leftImages = document.querySelectorAll('.part12_grid_image_left');
+    const rightImages = document.querySelectorAll('.part12_grid_image_right');
+
+    const part12Wrapper = document.querySelector('.part12_wrapper');
+    if (part12Wrapper) {
+      part12Wrapper.style.opacity = "0";
+      part12Wrapper.style.transition = "opacity 0.6s cubic-bezier(0.77, 0, 0.175, 1)";
+    }
+    gsap.to(bgDiv, {
+      clipPath: `polygon(${endPoly.map(pt => `${pt[0]}% ${pt[1]}%`).join(', ')})`,
+      ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: bgDiv,
+        start: "top+=80% bottom",
+        end: "+=50%",
+        scrub: true,
+        pin: true,
+        anticipatePin: 1,
+        // markers: true,
+        onUpdate: self => {
+          const progress = self.progress;
+          // Animate clip-path
+          const currentPoly = origPoly.map((pt, idx) => [
+            pt[0] + (endPoly[idx][0] - pt[0]) * progress,
+            pt[1] + (endPoly[idx][1] - pt[1]) * progress
+          ]);
+          bgDiv.style.clipPath = `polygon(${currentPoly.map(pt => `${pt[0]}% ${pt[1]}%`).join(', ')})`;
+
+          // Smoothly animate .part12_wrapper opacity to 1 at end, 0 otherwise
+          if (part12Wrapper) {
+            if (progress === 1) {
+              part12Wrapper.style.opacity = "1";
+            } else {
+              part12Wrapper.style.opacity = "0";
+            }
+          }
+        }
+      }
+    });
+
+
+    // Animate left grid images translateX from 0 to -50%
+    gsap.to(leftImages, {
+      left: "-100%",
+      ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: bgDiv,
+        start: "top+=50% bottom",
+        end: "+=150%",
+        scrub: true,
+        // markers: true,
+      }
+    });
+
+    // Animate right grid images translateX from 0 to +50%
+    gsap.to(rightImages, {
+      left: "100%",
+      ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: bgDiv,
+        start: "top+=50% bottom",
+        end: "+=150%",
+        scrub: true,
+        // markers: true,
+      }
+    });
+  }
+
+  // Delay setup until page layout is likely stable
+  setTimeout(setupAnimations, 350);
+
+  // Also on resize
+  window.addEventListener("resize", function() {
+    ScrollTrigger.getAll().forEach(t => t.kill());
+    setupAnimations();
+  });
+}
 
 
 
-
-
+if(window.innerWidth <= 480)
+{
+  part12_div_main_animation_480px();
+}
+else
+{
+  part12_div_main_animation_ganral();
+}
 
 
 // Enhanced .part12__wrapper_upper_1,2,3 interaction per margin-right requirement (margin on parent .part12__wrapper_upper)
