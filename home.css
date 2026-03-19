@@ -2078,7 +2078,7 @@ main {
 .part12__wrapper_lower {
     height: 30vh;
     width: 95vw;
-    background-color: rgb(247, 0, 255);
+    /* background-color: rgb(247, 0, 255); */
     display: flex;
     justify-content: start;
 
