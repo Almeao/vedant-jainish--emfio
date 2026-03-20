@@ -612,45 +612,63 @@ gsap.to("[data-speed]", {
 
   // Updated: GSAP ScrollTrigger to pin the parent and move the inner image smoothly based on scroll
 
-  document.addEventListener("DOMContentLoaded", function () {
-    // Do not add animation in <=480px viewport (media query behavior)
-    if (window.innerWidth <= 480) return;
+  // document.addEventListener("DOMContentLoaded", function () {
+  //   // Do not add animation in <=480px viewport (media query behavior)
+  //   if (window.innerWidth <= 480) return;
 
-    if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
-    if (gsap && gsap.registerPlugin) {
-      gsap.registerPlugin(ScrollTrigger);
-    }
+  //   if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
+  //   if (gsap && gsap.registerPlugin) {
+  //     gsap.registerPlugin(ScrollTrigger);
+  //   }
 
-    const imgAnimParent = document.querySelector('.part3_img_animation_inner');
-    const imgAnimInner = document.querySelector('.part3_img_animation_inner');
+  //   const imgAnimParent = document.querySelector('.part3_img_animation_inner');
+  //   const imgAnimInner = document.querySelector('.part3_img_animation_inner');
 
-    if (imgAnimParent && imgAnimInner) {
-      const parentHeight = imgAnimParent.offsetHeight;
-      const innerHeight = imgAnimInner.offsetHeight;
-      // distance inner should move: parentHeight - innerHeight (should be negative or zero)
-      // We want the image to move UP as parent is being scrolled into view
+  //   if (imgAnimParent && imgAnimInner) {
+  //     const parentHeight = imgAnimParent.offsetHeight;
+  //     const innerHeight = imgAnimInner.offsetHeight;
+  //     // distance inner should move: parentHeight - innerHeight (should be negative or zero)
+  //     // We want the image to move UP as parent is being scrolled into view
 
-      // Only animate if the inner is taller than parent
-      // We'll pin the parent, and animate inner Y
-      gsap.to(imgAnimInner, {
-        y: () => {
-          const moveY = innerHeight - imgAnimParent.offsetHeight;
-          return moveY > 0 ? -moveY : 0;
-        },
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: imgAnimParent,
-          start: "top 10%",
-          end: () => `+=${imgAnimParent.offsetHeight}`,
-          scrub: true,
-          pin: true,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-        }
-      });
-    }
-  });
+  //     // Only animate if the inner is taller than parent
+  //     // We'll pin the parent, and animate inner Y
+  //     gsap.to(imgAnimInner, {
+  //       y: () => {
+  //         const moveY = innerHeight - imgAnimParent.offsetHeight;
+  //         return moveY > 0 ? -moveY : 0;
+  //       },
+  //       ease: "power2.out",
+  //       scrollTrigger: {
+  //         trigger: imgAnimParent,
+  //         start: "top 10%",
+  //         end: () => `+=${imgAnimParent.offsetHeight}`,
+  //         scrub: true,
+  //         pin: true,
+  //         anticipatePin: 1,
+  //         // invalidateOnRefresh: true,
+  //       }
+  //     });
+  //   }
+  // });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
 
 
