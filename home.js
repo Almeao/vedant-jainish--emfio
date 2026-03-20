@@ -637,7 +637,7 @@ gsap.to("[data-speed]", {
           const moveY = innerHeight - imgAnimParent.offsetHeight;
           return moveY > 0 ? -moveY : 0;
         },
-        ease: "none",
+        ease: "power2.out",
         scrollTrigger: {
           trigger: imgAnimParent,
           start: "top 10%",
