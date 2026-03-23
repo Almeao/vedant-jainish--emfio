@@ -1100,10 +1100,10 @@ main {
 
 .part12__wrapper_upper {
     height: 15vh;
-    width: 120vw;
+    width: 130vw;
     /* background-color: yellow; */
     margin-top: 15vh;
-    gap: 17%;
+    gap: 15%;
     display: flex;
     align-items: center;
 }

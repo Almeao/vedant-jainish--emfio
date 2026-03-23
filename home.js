@@ -1666,8 +1666,8 @@ else
         });
       });
       let mr = "20%";
-      if (activeIdx === 1) mr = "-20%";
-      if (activeIdx === 2) mr = "-50%";
+      if (activeIdx === 1) mr = "-5%";
+      if (activeIdx === 2) mr = "-40%";
       gsap.to(upperDiv, {
         x: mr,
         duration: 0.5,
